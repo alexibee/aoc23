@@ -17,7 +17,7 @@ const solution = (day, file) => {
 		daySolution = require(`./days/${day}.js`);
 	} catch (error) {
 		console.log("Solution doesn't exist yet!");
-		process.exit(1);
+		process.exit(2);
 	}
 
 	if (daySolution) {
