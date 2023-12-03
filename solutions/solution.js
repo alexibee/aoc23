@@ -4,11 +4,12 @@ const processFile = (file) => {
 	let content;
 	try {
 		content = fs.readFileSync(file, 'utf8');
+		content = content.toString().split('\n');
 	} catch (error) {
 		console.error(error);
 		process.exit(1);
 	}
-	return content.toString().split('\n');
+	return content;
 };
 
 const solution = (day, file) => {

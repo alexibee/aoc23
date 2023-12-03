@@ -4,11 +4,12 @@ const file = './resources/01test.txt';
 let content;
 try {
 	content = fs.readFileSync(file, 'utf8');
+	content = content.toString().split('\n');
 } catch (error) {
 	console.error(error);
 	process.exit(1);
 }
-const arrayOfLines = content.toString().split('\n');
+const arrayOfLines = content;
 
 const expValid = [318, 309];
 
