@@ -5,6 +5,7 @@ const processFile = (file) => {
 	try {
 		content = fs.readFileSync(file, 'utf8');
 		content = content.toString().split('\n');
+		if (!content[-1]) content.pop();
 	} catch (error) {
 		console.error(error);
 		process.exit(1);
