@@ -4,8 +4,7 @@ const processFile = (file) => {
 	let content;
 	try {
 		content = fs.readFileSync(file, 'utf8');
-		content = content.toString().split('\n');
-		if (!content[-1]) content.pop();
+		content = content.toString();
 	} catch (error) {
 		console.error(error);
 		process.exit(1);
@@ -23,10 +22,10 @@ const solution = (day, file) => {
 	}
 
 	if (daySolution) {
-		const array = processFile(file);
+		const string = processFile(file);
 		console.log('Day #' + day);
-		console.log('Part 1: ' + daySolution.part1(array));
-		console.log('Part 2: ' + daySolution.part2(array));
+		console.log('Part 1: ' + daySolution.part1(string));
+		console.log('Part 2: ' + daySolution.part2(string));
 	}
 };
 

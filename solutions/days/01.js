@@ -10,7 +10,9 @@ const numObj = {
 	nine: 9,
 };
 
-const part1 = (array) => {
+const part1 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	let firstNumber = 0;
 	let secondNumber = 0;
 	let result = 0;
@@ -37,7 +39,9 @@ const checkWord = (word) => {
 	return result;
 };
 
-const part2 = (array) => {
+const part2 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	let result = 0;
 	array.forEach((line) => {
 		if (line.trim() === '') return;

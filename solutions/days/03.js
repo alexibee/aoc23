@@ -36,7 +36,9 @@ const isNextTo = (num, symbol) => {
 	);
 };
 
-const part1 = (array) => {
+const part1 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	const { numbers, symbols } = processArray(array);
 	const adjacentNums = numbers.filter((num) =>
 		symbols.some((symbol) => isNextTo(num, symbol))
@@ -44,7 +46,9 @@ const part1 = (array) => {
 	const sum = adjacentNums.reduce((acc, num) => acc + num.value, 0);
 	return sum;
 };
-const part2 = (array) => {
+const part2 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	const { numbers, symbols } = processArray(array);
 	const gears = symbols.filter((symbol) => symbol.token === '*');
 	const adjacentProduct = gears.map((gear) => {

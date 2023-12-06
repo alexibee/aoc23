@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { part1, part2 } = require('../solutions/days/04.js');
-const file = './resources/04test.txt';
+const { part1, part2 } = require('../solutions/days/05.js');
+const file = './resources/05test.txt';
 let content;
 try {
 	content = fs.readFileSync(file, 'utf8');
@@ -10,9 +10,9 @@ try {
 }
 const string = content.toString();
 
-const expectedValid = [13, 30];
+const expectedValid = [35, 46];
 
-describe('Day 04: Scratchcards', () => {
+describe('Day 05: If You Give A Seed A Fertilizer', () => {
 	describe('Part 1', () => {
 		it('should return a number', () => {
 			expect(typeof part1(string)).toBe('number');

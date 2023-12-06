@@ -8,25 +8,25 @@ try {
 	console.error(error);
 	process.exit(1);
 }
-const arrayOfLines = content.toString().split('\n');
+const string = content.toString();
 
 const expValid = [23, 4928];
 
 describe('Day 2: Cube Conundrum', () => {
 	describe('Part 1', () => {
 		it('should return valid result', () => {
-			expect(part1(arrayOfLines)).toEqual(expValid[0]);
+			expect(part1(string)).toEqual(expValid[0]);
 		});
 		it('should return 0 with no lines', () => {
-			expect(part1([])).toBe(0);
+			expect(part1('')).toBe(0);
 		});
 	});
 	describe('Part 2', () => {
 		it('should return valid result', () => {
-			expect(part2(arrayOfLines)).toEqual(expValid[1]);
+			expect(part2(string)).toEqual(expValid[1]);
 		});
 		it('should return 0 with no lines', () => {
-			expect(part1([])).toBe(0);
+			expect(part1('')).toBe(0);
 		});
 	});
 });

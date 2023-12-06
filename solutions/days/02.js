@@ -29,7 +29,9 @@ const sharedPart = (array) => {
 	return arrayOfMaxObjs.filter(Boolean);
 };
 
-const part1 = (array) => {
+const part1 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	const arrayOfMaxObjs = sharedPart(array);
 	const sum = arrayOfMaxObjs.reduce((acc, item, index) => {
 		if (
@@ -44,7 +46,9 @@ const part1 = (array) => {
 	return sum;
 };
 
-const part2 = (array) => {
+const part2 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	const arrayOfMaxObjs = sharedPart(array);
 	const sumOfPower = arrayOfMaxObjs.reduce((acc, item) => {
 		acc += item.red * item.blue * item.green;

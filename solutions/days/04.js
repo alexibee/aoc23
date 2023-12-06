@@ -9,7 +9,9 @@ const parseArray = (array) => {
 	return arrayOfCards;
 };
 
-const part1 = (array) => {
+const part1 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	const arrayOfCards = parseArray(array);
 	const arrayOfCounts = arrayOfCards.map((array) => {
 		const [winningArray, resultsArray] = array;
@@ -25,7 +27,9 @@ const part1 = (array) => {
 	const sum = arrayOfCounts.reduce((acc, count) => acc + count, 0);
 	return sum;
 };
-const part2 = (array) => {
+const part2 = (string) => {
+	const array = string.split('\n');
+	if (!array[array.length - 1]) array.pop();
 	const arrayOfCards = parseArray(array);
 	const arrayOfCounts = arrayOfCards.map((array) => {
 		const [winningArray, resultsArray] = array;
