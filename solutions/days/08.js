@@ -71,7 +71,6 @@ const part2 = (string) => {
 		const calculateGCD = (num1, num2) =>
 			!num2 ? num1 : calculateGCD(num2, num1 % num2);
 		const _calculateLCM = (num1, num2) => {
-			console.log(num1, num2);
 			return (num1 * num2) / calculateGCD(num1, num2);
 		};
 		return [...arr].reduce((a, b) => _calculateLCM(a, b));
