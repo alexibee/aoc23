@@ -1,14 +1,3 @@
-const checkDivisor = (array, number, resultArray) => {
-	let dividerStatus = array.every((total) => !total % number);
-	let dividedArray = array;
-	if (dividerStatus) {
-		dividedArray = array.map((total) => total / check);
-		resultArray.push(number);
-		return checkDivisor(dividedArray, number, resultArray);
-	}
-	return [dividedArray, resultArray];
-};
-
 const part1 = (string) => {
 	if (!string) return 0;
 	let [instructions, navigation] = string.split(/\n\s*\n/);
@@ -73,7 +62,7 @@ const part2 = (string) => {
 		const _calculateLCM = (num1, num2) => {
 			return (num1 * num2) / calculateGCD(num1, num2);
 		};
-		return [...arr].reduce((a, b) => _calculateLCM(a, b));
+		return [...arr].reduce((num1, num2) => _calculateLCM(num1, num2));
 	};
 
 	return calculateLCM(...stepsTotal);
